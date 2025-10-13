@@ -136,6 +136,7 @@ namespace ConsoleApp1
                     case "y":
                         _excercise.ExcerciseInformation = Description;
                         return;
+
                     case "n":
                         Console.WriteLine("\n\nLets try again than.");
                         continue;
@@ -144,7 +145,6 @@ namespace ConsoleApp1
                         Console.WriteLine("\n\nNo valid answer was given (y/n). Try again.");
                         continue;
                 }
-
             }
         }
 
@@ -256,7 +256,8 @@ namespace ConsoleApp1
                 {
                     _excercise.Sets = output;
                     break;
-                } else
+                }
+                else
                 {
                     Console.Write("\n\nAnswer must be between values 1-10, " + output + " is invalid.");
                     continue;

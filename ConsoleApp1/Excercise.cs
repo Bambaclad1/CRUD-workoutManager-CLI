@@ -26,6 +26,5 @@ namespace ConsoleApp1
         public TimeSpan RecommendedRestTime = TimeSpan.FromSeconds(60);
 
         public List<string> EquipmentNeeded { get; set; } = ["Barbell", "Bench"];
-
     }
 }

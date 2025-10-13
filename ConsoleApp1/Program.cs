@@ -34,6 +34,7 @@ namespace ConsoleApp1
 
                     case 2:
                         break;
+
                     case 0:
                         System.Environment.Exit(0);
                         // if using winforms:   System.Windows.Forms.Application.Exit();
