@@ -37,13 +37,17 @@ namespace ConsoleApp1
                     case 1:
                         ExcerciseRepository.SaveExcercises(exerciseCreator.Create());
                         break;
+
                     case 2:
                         ExcerciseRepository.Read();
                         break;
+
                     case 3:
                         break;
+
                     case 0:
                         return;
+
                     default:
                         Console.WriteLine("Invalid input. Please try again.\n");
                         break;
