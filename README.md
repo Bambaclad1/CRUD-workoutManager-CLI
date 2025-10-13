@@ -16,7 +16,7 @@ As a user, you can perform the following actions:
 
 Sounds complicated huh? ~~That's why im going through development hell~~ That is why this looks like a amazing challenge for me!
 
-~~We love Microsoft docs recommending the user to just completely use AI!~~~
+~~We love Microsoft docs recommending the user to just completely use AI!~~
 
 all jokes aside, this is a really nice challenge, and I'm glad that I got the green light to work on this from my school.
 
