@@ -15,7 +15,7 @@ namespace ConsoleApp1
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
 
-        static string ReadExcercises()
+        private static string ReadExcercises()
         {
             try
             {
@@ -28,7 +28,6 @@ namespace ConsoleApp1
             {
                 throw new FileNotFoundException("Error 404, while trying to access excerciseFormat, it was not found.", e);
             }
-
         }
 
         public static void SaveExcercises(Excercise buildedExcercise)
@@ -48,7 +47,7 @@ namespace ConsoleApp1
                     {
                         excercies = JsonSerializer.Deserialize<List<Excercise>>(existingContent, _options)
                                     ?? new List<Excercise>();
-                    }    
+                    }
                 }
 
                 excercies.Add(buildedExcercise);
@@ -61,17 +60,13 @@ namespace ConsoleApp1
             }
             catch (Exception e)
             {
-           
                 throw new Exception("Unknown exception, failed to save workout.  ", e);
             }
-
-
         }
 
-       public static void Read()
-       {
+        public static void Read()
+        {
             Console.WriteLine(ReadExcercises());
-       }
-
+        }
     }
 }
