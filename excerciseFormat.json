@@ -1,0 +1,51 @@
+[
+  {
+    "Name": "Bench Press",
+    "Description": "Builds chest and triceps",
+    "DifficultyLevel": 2,
+    "PrimaryFocus": "Chest",
+    "SecondaryFocus": "Shoulders, Triceps",
+    "ExcerciseInformation": "Classic strength compound.",
+    "Image": "base64Array",
+    "VideoURL": "https://youtu.be/somevideo",
+    "ExcerciseSteps": {
+      "Step1": {
+        "String1": "Grip bar",
+        "String2": "Lower slowly"
+      },
+      "Step2": {
+        "String1": "Press up",
+        "String2": "Lockout controlled"
+      }
+    },
+    "Sets": 3,
+    "Reps": 10,
+    "RecommendedRestTime": 90,
+    "Equipment1": "Barbell",
+    "Equipment2": "Bench"
+  },
+  {
+    "Name": "Bicep Curl",
+    "Description": "Isolation for biceps",
+    "DifficultyLevel": 1,
+    "PrimaryFocus": "Biceps",
+    "SecondaryFocus": "Forearms",
+    "ExcerciseInformation": "Perfect for beginners.",
+    "Image": "base64Array",
+    "VideoURL": "https://youtu.be/another",
+    "ExcerciseSteps": {
+      "Step1": {
+        "String1": "Stand tall",
+        "String2": "Curl slowly"
+      },
+      "Step2": {
+        "String1": "Squeeze",
+        "String2": "Lower under control"
+      }
+    },
+    "Sets": 3,
+    "Reps": 12,
+    "RecommendedRestTime": 60,
+    "Equipment1": "Dumbbell"
+  }
+]

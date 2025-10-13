@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Barbell Bench Press",
+    "description": "A classic compound movement focusing on chest development and upper body pushing strength.",
+    "difficultyLevel": 3,
+    "primaryFocus": [
+      "Chest Muscles",
+      "Pectoralis Major"
+    ],
+    "secondaryFocus": [
+      "Shoulder Muscles",
+      "Triceps"
+    ],
+    "excerciseInformation": "The barbell bench press is one of the most effective exercises for building upper body mass and strength.",
+    "executionSteps": [
+      "Step 1. Lie flat on a bench with feet planted on the floor.",
+      "Step 2. Grip the bar slightly wider than shoulder width and lower it to your chest.",
+      "Step 3. Press the bar back up until your arms are fully extended."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=rT7DgCr-3pg",
+    "sets": 4,
+    "reps": 8,
+    "equipmentNeeded": [
+      "Barbell",
+      "Bench"
+    ]
+  },
+  {
+    "name": "Barbell Back Squat",
+    "description": "The king of lower body exercises, targeting legs, hips, and core.",
+    "difficultyLevel": 4,
+    "primaryFocus": [
+      "Quadriceps",
+      "Glutes"
+    ],
+    "secondaryFocus": [
+      "Hamstrings",
+      "Core Muscles"
+    ],
+    "excerciseInformation": "A fundamental compound exercise for building leg power and overall strength.",
+    "executionSteps": [
+      "Step 1. Position the barbell across your upper back.",
+      "Step 2. Brace your core and descend until thighs are parallel to the floor.",
+      "Step 3. Drive through your heels to stand back up."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=Dy28eq2PjcM",
+    "sets": 4,
+    "reps": 6,
+    "equipmentNeeded": [
+      "Barbell",
+      "Squat Rack"
+    ]
+  },
+  {
+    "name": "Deadlift",
+    "description": "A total-body powerhouse movement focusing on posterior chain strength.",
+    "difficultyLevel": 4,
+    "primaryFocus": [
+      "Hamstrings",
+      "Glutes"
+    ],
+    "secondaryFocus": [
+      "Lower Back",
+      "Forearms",
+      "Core"
+    ],
+    "excerciseInformation": "The deadlift builds overall strength, improving posture and athletic performance.",
+    "executionSteps": [
+      "Step 1. Stand with feet shoulder-width apart and grip the barbell overhand.",
+      "Step 2. Keep your back straight as you lift the bar by driving through your legs.",
+      "Step 3. Lower the bar under control back to the floor."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=op9kVnSso6Q",
+    "sets": 4,
+    "reps": 5,
+    "equipmentNeeded": [
+      "Barbell",
+      "Plates"
+    ]
+  },
+  {
+    "name": "Pull-Up",
+    "description": "A fundamental upper body exercise targeting the lats and biceps using bodyweight.",
+    "difficultyLevel": 3,
+    "primaryFocus": [
+      "Lats",
+      "Upper Back"
+    ],
+    "secondaryFocus": [
+      "Biceps",
+      "Forearms"
+    ],
+    "excerciseInformation": "The pull-up is a measure of pure upper body control and strength.",
+    "executionSteps": [
+      "Step 1. Grip the bar slightly wider than shoulder width with palms facing away.",
+      "Step 2. Pull your chin above the bar by contracting your lats.",
+      "Step 3. Lower yourself under control until arms are fully extended."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+    "sets": 3,
+    "reps": 8,
+    "equipmentNeeded": [
+      "Pull-Up Bar"
+    ]
+  },
+  {
+    "name": "Overhead Shoulder Press",
+    "description": "A pressing movement targeting shoulder and triceps strength.",
+    "difficultyLevel": 3,
+    "primaryFocus": [
+      "Deltoids",
+      "Shoulder Muscles"
+    ],
+    "secondaryFocus": [
+      "Triceps",
+      "Upper Chest"
+    ],
+    "excerciseInformation": "The overhead press develops shoulder stability and raw pressing power.",
+    "executionSteps": [
+      "Step 1. Grip the bar at shoulder level with palms facing forward.",
+      "Step 2. Press the bar overhead until arms are fully extended.",
+      "Step 3. Lower it back to the starting position in control."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=B-aVuyhvLHU",
+    "sets": 3,
+    "reps": 10,
+    "equipmentNeeded": [
+      "Barbell",
+      "Rack"
+    ]
+  },
+  {
+    "name": "Barbell Bicep Curl",
+    "description": "A staple isolation movement for building arm size and strength.",
+    "difficultyLevel": 2,
+    "primaryFocus": [
+      "Biceps"
+    ],
+    "secondaryFocus": [
+      "Forearms"
+    ],
+    "excerciseInformation": "Focuses on isolating the biceps for muscle growth and definition.",
+    "executionSteps": [
+      "Step 1. Hold the barbell with an underhand grip at shoulder width.",
+      "Step 2. Curl the bar toward your chest while keeping elbows stationary.",
+      "Step 3. Lower the bar slowly back down."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=kwG2ipFRgfo",
+    "sets": 3,
+    "reps": 12,
+    "equipmentNeeded": [
+      "Barbell"
+    ]
+  },
+  {
+    "name": "Dumbbell Lateral Raise",
+    "description": "A shoulder isolation exercise to shape and widen your delts.",
+    "difficultyLevel": 2,
+    "primaryFocus": [
+      "Lateral Deltoids"
+    ],
+    "secondaryFocus": [
+      "Front Deltoids",
+      "Traps"
+    ],
+    "excerciseInformation": "Lateral raises target the side shoulders for a broader appearance.",
+    "executionSteps": [
+      "Step 1. Hold dumbbells by your sides with a slight bend in your elbows.",
+      "Step 2. Raise the weights out to shoulder height.",
+      "Step 3. Lower them slowly back to your sides."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=3VcKaXpzqRo",
+    "sets": 3,
+    "reps": 15,
+    "equipmentNeeded": [
+      "Dumbbells"
+    ]
+  },
+  {
+    "name": "Barbell Row",
+    "description": "A compound pulling movement for back thickness and posture.",
+    "difficultyLevel": 3,
+    "primaryFocus": [
+      "Lats",
+      "Rhomboids"
+    ],
+    "secondaryFocus": [
+      "Rear Deltoids",
+      "Biceps"
+    ],
+    "excerciseInformation": "The barbell row strengthens your back and improves pulling performance.",
+    "executionSteps": [
+      "Step 1. Grip the barbell with an overhand grip and bend at the hips.",
+      "Step 2. Pull the barbell toward your lower rib cage.",
+      "Step 3. Lower it back down with control."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=vT2GjY_Umpw",
+    "sets": 4,
+    "reps": 10,
+    "equipmentNeeded": [
+      "Barbell"
+    ]
+  },
+  {
+    "name": "Leg Press",
+    "description": "A lower-body powerhouse exercise focusing on quads and glutes.",
+    "difficultyLevel": 2,
+    "primaryFocus": [
+      "Quadriceps",
+      "Glutes"
+    ],
+    "secondaryFocus": [
+      "Hamstrings"
+    ],
+    "excerciseInformation": "The leg press builds leg mass and strength safely using a machine.",
+    "executionSteps": [
+      "Step 1. Sit on the leg press machine and place feet shoulder-width on the platform.",
+      "Step 2. Lower the sled until knees are at 90 degrees.",
+      "Step 3. Push through your heels to return to starting position."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=IZxyjW7MPJQ",
+    "sets": 4,
+    "reps": 10,
+    "equipmentNeeded": [
+      "Leg Press Machine"
+    ]
+  },
+  {
+    "name": "Plank",
+    "description": "An isometric core exercise for stability and endurance.",
+    "difficultyLevel": 1,
+    "primaryFocus": [
+      "Core Muscles"
+    ],
+    "secondaryFocus": [
+      "Shoulders",
+      "Glutes"
+    ],
+    "excerciseInformation": "The plank improves core stability and posture while reducing injury risk.",
+    "executionSteps": [
+      "Step 1. Get into a push-up position resting on forearms.",
+      "Step 2. Keep your body straight from head to heels.",
+      "Step 3. Hold this position for the desired time."
+    ],
+    "image": null,
+    "videoURL": "https://www.youtube.com/watch?v=pSHjTRCQxIw",
+    "sets": 3,
+    "reps": 60,
+    "equipmentNeeded": [
+      "Bodyweight"
+    ]
+  }
+]
