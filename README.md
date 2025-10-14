@@ -14,12 +14,6 @@ As a user, you can perform the following actions:
 * Remove excercises/workouts
 
 
-Sounds complicated huh? ~~That's why im going through development hell~~ That is why this looks like a amazing challenge for me!
-
-~~We love Microsoft docs recommending the user to just completely use AI!~~~
-
-all jokes aside, this is a really nice challenge, and I'm glad that I got the green light to work on this from my school.
-
 ## Contents
 * (personal) To-Do List
 * Tech Stack
@@ -40,11 +34,11 @@ all jokes aside, this is a really nice challenge, and I'm glad that I got the gr
 ## (personal) To-Do List
 ### Phase One
 **'Backend' implementation**
-- [ ] Project initialization
-- [ ] Create A Excercise
-- [ ] Implement Builder Pattern at Create
-- [ ] Read Operation
-- [ ] Get Writing/Reading .json files working
+- [x] Project initialization
+- [x] Create A Excercise
+- [x] Implement Builder Pattern at Create
+- [x] Read Operation
+- [x] Get Writing/Reading .json files working
 - [ ] Create Workout. One workout = multiple excercises
 - [ ] Read Workout. Same .json method
 - [ ] Create a Calendar (Use a package..?) and add the possibility to add workouts to it
@@ -56,8 +50,10 @@ all jokes aside, this is a really nice challenge, and I'm glad that I got the gr
 ### Phase Two
 **'Frontend' inplementation**
 - [ ] Get familiar with Avalonia UI
+- [ ] Do some Research on tool dashboard UI's. Find websites that offer UI examples
 - [ ] Create a Figma Design for the frontend website. (Use Avalonia UI examples for the best success given time).
-- [ ] 
+- [ ] Create the Front-End
+- [ ] Design a dashboard-like interface.
 ## Tech Stack
 Do people these days actually share their entire stack developing programs? I think it's nice to have in a documentation, just to let others know how I coded this program.
 
