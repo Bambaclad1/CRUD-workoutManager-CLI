@@ -13,6 +13,13 @@ As a user, you can perform the following actions:
 * Update excercises/workouts
 * Remove excercises/workouts
 
+
+Sounds complicated huh? ~~That's why im going through development hell~~ That is why this looks like a amazing challenge for me!
+
+~~We love Microsoft docs recommending the user to just completely use AI!~~~
+
+all jokes aside, this is a really nice challenge, and I'm glad that I got the green light to work on this from my school.
+
 ## Contents
 * (personal) To-Do List
 * Tech Stack
@@ -57,3 +64,6 @@ Do people these days actually share their entire stack developing programs? I th
 ## Disclaimer
 **AI Usage Disclaimer**: *AI was mostly used for help with complex parts such as serializing JSON, aside from that, youtube videos,
 and Microsoft docs/GeeksForGeeks/W3Schools was used. Oh btw, ChatGPT created this cool bannner at the start of the page :)*
+
+nvm this shit is terrible
+<img width="855" height="543" alt="image" src="https://github.com/user-attachments/assets/baa28a92-8246-4e2f-a014-04ae378fb05d" />
