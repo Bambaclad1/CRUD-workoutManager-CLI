@@ -13,14 +13,8 @@ As a user, you can perform the following actions:
 * Update excercises/workouts
 * Remove excercises/workouts
 
-
-Sounds complicated huh? ~~That's why im going through development hell~~ That is why this looks like a amazing challenge for me!
-
-~~We love Microsoft docs recommending the user to just completely use AI!~~~
-
-all jokes aside, this is a really nice challenge, and I'm glad that I got the green light to work on this from my school.
-
 ## Contents
+* (personal) To-Do List
 * Tech Stack
 * Create Opreations
 	* Builder Pattern
@@ -36,6 +30,27 @@ all jokes aside, this is a really nice challenge, and I'm glad that I got the gr
 * Roadblocks I went through and learned from
 * Disclaimer
 
+## (personal) To-Do List
+### Phase One
+**'Backend' implementation**
+- [ ] Project initialization
+- [ ] Create A Excercise
+- [ ] Implement Builder Pattern at Create
+- [ ] Read Operation
+- [ ] Get Writing/Reading .json files working
+- [ ] Create Workout. One workout = multiple excercises
+- [ ] Read Workout. Same .json method
+- [ ] Create a Calendar (Use a package..?) and add the possibility to add workouts to it
+- [ ] ICal Intregration
+- [ ] Edit existing excercies (use the same builder pattern?)
+- [ ] Edit existing workouts
+- [ ] Remove Excercises/Workouts
+
+### Phase Two
+**'Frontend' inplementation**
+- [ ] Get familiar with Avalonia UI
+- [ ] Create a Figma Design for the frontend website. (Use Avalonia UI examples for the best success given time).
+- [ ] 
 ## Tech Stack
 Do people these days actually share their entire stack developing programs? I think it's nice to have in a documentation, just to let others know how I coded this program.
 
