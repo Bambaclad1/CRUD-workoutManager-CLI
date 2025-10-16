@@ -8,7 +8,6 @@ namespace ConsoleApp1
         {
             string[] menu = { "1. Open Workout Manager", "2. Check workout logbook", "0. Exit Application" };
             Console.Clear();
-
             while (true)
             {
                 Console.CursorVisible = false;
