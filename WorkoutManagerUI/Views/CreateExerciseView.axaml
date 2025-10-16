@@ -1,0 +1,287 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:WorkoutManagerUI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="WorkoutManagerUI.Views.CreateExerciseView"
+             x:DataType="vm:CreateExerciseViewModel">
+
+    <Design.DataContext>
+        <vm:CreateExerciseViewModel/>
+    </Design.DataContext>
+
+    <ScrollViewer>
+        <StackPanel Spacing="15" MaxWidth="700" Margin="20">
+            <TextBlock Text="Create New Exercise" 
+                      FontSize="28" 
+                      FontWeight="Bold"
+                      Margin="0,0,0,10"/>
+
+            <!-- Basic Information -->
+            <Border Background="White" CornerRadius="8" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Basic Information" FontSize="18" FontWeight="Bold"/>
+                    
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Exercise Name *"/>
+                        <TextBox Text="{Binding Name}" Watermark="e.g., Bench Press"/>
+                    </StackPanel>
+
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Description *"/>
+                        <TextBox Text="{Binding Description}" 
+                                Watermark="Brief description of the exercise"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                Height="80"/>
+                    </StackPanel>
+
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Difficulty Level (1-3)"/>
+                        <NumericUpDown Value="{Binding DifficultyLevel}" 
+                                      Minimum="1" 
+                                      Maximum="3"
+                                      Increment="1"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Muscle Groups -->
+            <Border Background="White" CornerRadius="8" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Muscle Groups" FontSize="18" FontWeight="Bold"/>
+                    
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Primary Focus"/>
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                            <TextBox Grid.Column="0" 
+                                    Text="{Binding PrimaryFocusInput}" 
+                                    Watermark="e.g., Chest"/>
+                            <Button Grid.Column="1" 
+                                   Content="Add" 
+                                   Command="{Binding AddPrimaryFocusCommand}"/>
+                        </Grid>
+                        <ItemsControl ItemsSource="{Binding PrimaryFocus}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="#3498DB" 
+                                           CornerRadius="4" 
+                                           Padding="8,4" 
+                                           Margin="2">
+                                        <Grid ColumnDefinitions="*,Auto">
+                                            <TextBlock Grid.Column="0" 
+                                                      Text="{Binding}" 
+                                                      Foreground="White"/>
+                                            <Button Grid.Column="1" 
+                                                   Content="×" 
+                                                   Padding="4"
+                                                   Margin="5,0,0,0"
+                                                   Command="{Binding $parent[ItemsControl].((vm:CreateExerciseViewModel)DataContext).RemovePrimaryFocusCommand}"
+                                                   CommandParameter="{Binding}"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Secondary Focus"/>
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                            <TextBox Grid.Column="0" 
+                                    Text="{Binding SecondaryFocusInput}" 
+                                    Watermark="e.g., Triceps"/>
+                            <Button Grid.Column="1" 
+                                   Content="Add" 
+                                   Command="{Binding AddSecondaryFocusCommand}"/>
+                        </Grid>
+                        <ItemsControl ItemsSource="{Binding SecondaryFocus}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="#2ECC71" 
+                                           CornerRadius="4" 
+                                           Padding="8,4" 
+                                           Margin="2">
+                                        <Grid ColumnDefinitions="*,Auto">
+                                            <TextBlock Grid.Column="0" 
+                                                      Text="{Binding}" 
+                                                      Foreground="White"/>
+                                            <Button Grid.Column="1" 
+                                                   Content="×" 
+                                                   Padding="4"
+                                                   Margin="5,0,0,0"
+                                                   Command="{Binding $parent[ItemsControl].((vm:CreateExerciseViewModel)DataContext).RemoveSecondaryFocusCommand}"
+                                                   CommandParameter="{Binding}"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Detailed Information -->
+            <Border Background="White" CornerRadius="8" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Detailed Information" FontSize="18" FontWeight="Bold"/>
+                    
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Exercise Information"/>
+                        <TextBox Text="{Binding ExerciseInformation}" 
+                                Watermark="Detailed description of what this exercise does and how it works"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                Height="120"/>
+                    </StackPanel>
+
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Video URL (optional)"/>
+                        <TextBox Text="{Binding VideoURL}" 
+                                Watermark="https://youtube.com/..."/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Execution Steps -->
+            <Border Background="White" CornerRadius="8" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Execution Steps" FontSize="18" FontWeight="Bold"/>
+                    
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                        <TextBox Grid.Column="0" 
+                                Text="{Binding ExecutionStepsInput}" 
+                                Watermark="Describe a step"/>
+                        <Button Grid.Column="1" 
+                               Content="Add Step" 
+                               Command="{Binding AddExecutionStepCommand}"/>
+                    </Grid>
+
+                    <ItemsControl ItemsSource="{Binding ExecutionSteps}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="#ECF0F1" 
+                                       CornerRadius="4" 
+                                       Padding="10" 
+                                       Margin="0,2">
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <TextBlock Grid.Column="0" 
+                                                  Text="{Binding}"
+                                                  TextWrapping="Wrap"/>
+                                        <Button Grid.Column="1" 
+                                               Content="Remove" 
+                                               Padding="8,4"
+                                               Command="{Binding $parent[ItemsControl].((vm:CreateExerciseViewModel)DataContext).RemoveExecutionStepCommand}"
+                                               CommandParameter="{Binding}"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+
+            <!-- Sets, Reps, and Rest -->
+            <Border Background="White" CornerRadius="8" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Workout Configuration" FontSize="18" FontWeight="Bold"/>
+                    
+                    <Grid ColumnDefinitions="*,*,*" ColumnSpacing="15">
+                        <StackPanel Grid.Column="0" Spacing="5">
+                            <TextBlock Text="Sets"/>
+                            <NumericUpDown Value="{Binding Sets}" 
+                                          Minimum="1" 
+                                          Maximum="10"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Spacing="5">
+                            <TextBlock Text="Reps"/>
+                            <NumericUpDown Value="{Binding Reps}" 
+                                          Minimum="1" 
+                                          Maximum="30"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2" Spacing="5">
+                            <TextBlock Text="Rest Time (sec)"/>
+                            <NumericUpDown Value="{Binding RestTimeSeconds}" 
+                                          Minimum="0" 
+                                          Maximum="300"
+                                          Increment="5"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!-- Equipment -->
+            <Border Background="White" CornerRadius="8" Padding="20">
+                <StackPanel Spacing="15">
+                    <TextBlock Text="Equipment Needed" FontSize="18" FontWeight="Bold"/>
+                    
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                        <TextBox Grid.Column="0" 
+                                Text="{Binding EquipmentInput}" 
+                                Watermark="e.g., Barbell"/>
+                        <Button Grid.Column="1" 
+                               Content="Add Equipment" 
+                               Command="{Binding AddEquipmentCommand}"/>
+                    </Grid>
+
+                    <ItemsControl ItemsSource="{Binding EquipmentNeeded}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="#E67E22" 
+                                       CornerRadius="4" 
+                                       Padding="8,4" 
+                                       Margin="2">
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <TextBlock Grid.Column="0" 
+                                                  Text="{Binding}" 
+                                                  Foreground="White"/>
+                                        <Button Grid.Column="1" 
+                                               Content="×" 
+                                               Padding="4"
+                                               Margin="5,0,0,0"
+                                               Command="{Binding $parent[ItemsControl].((vm:CreateExerciseViewModel)DataContext).RemoveEquipmentCommand}"
+                                               CommandParameter="{Binding}"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+
+            <!-- Action Buttons -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="15" Margin="0,10,0,20">
+                <Button Grid.Column="0" 
+                       Content="Cancel" 
+                       Command="{Binding CancelCommand}"
+                       HorizontalAlignment="Stretch"
+                       Padding="15"/>
+                <Button Grid.Column="1" 
+                       Content="Save Exercise" 
+                       Command="{Binding SaveExerciseCommand}"
+                       HorizontalAlignment="Stretch"
+                       Padding="15"
+                       Background="#27AE60"
+                       Foreground="White"/>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

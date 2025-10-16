@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:WorkoutManagerUI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="WorkoutManagerUI.Views.HomeView"
+             x:DataType="vm:HomeViewModel">
+
+    <Design.DataContext>
+        <vm:HomeViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="20">
+        <TextBlock Text="Welcome to Workout Manager" 
+                  FontSize="32" 
+                  FontWeight="Bold"/>
+        <TextBlock Text="Manage your exercises and workouts with ease" 
+                  FontSize="18" 
+                  Foreground="#7F8C8D"/>
+        
+        <Border Background="White" 
+               CornerRadius="8" 
+               Padding="20"
+               Margin="0,20,0,0">
+            <StackPanel Spacing="15">
+                <TextBlock Text="Features:" FontSize="20" FontWeight="Bold"/>
+                <TextBlock Text="✓ Create and manage exercises" FontSize="16"/>
+                <TextBlock Text="✓ View all your exercises" FontSize="16"/>
+                <TextBlock Text="✓ Track sets, reps, and rest times" FontSize="16"/>
+                <TextBlock Text="✓ Add detailed execution steps" FontSize="16"/>
+                <TextBlock Text="✓ Include video URLs for demonstrations" FontSize="16"/>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</UserControl>
