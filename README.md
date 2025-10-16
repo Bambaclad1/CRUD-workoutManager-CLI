@@ -58,6 +58,7 @@ As a user, you can perform the following actions:
 Do people these days actually share their entire stack developing programs? I think it's nice to have in a documentation, just to let others know how I coded this program.
 
 ## Disclaimer
+**Typo Disclaimer**: *I understand that seeing 'Excercise' and 'Exercise' in the code base is a huge mistake I've made. I will fix this in the front-end, but the Console App will stay like this for now.*
 **AI Usage Disclaimer**: *AI was mostly used for help with complex parts such as serializing JSON, aside from that, youtube videos,
 and Microsoft docs/GeeksForGeeks/W3Schools was used. Oh btw, ChatGPT created this cool bannner at the start of the page :)*
 
