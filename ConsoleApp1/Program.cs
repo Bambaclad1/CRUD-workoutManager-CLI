@@ -7,11 +7,11 @@ namespace ConsoleApp1
         private static void Main(string[] args)
         {
             string[] menu = { "1. Open Workout Manager", "2. Check workout logbook", "0. Exit Application" };
+            Console.Clear();
 
             while (true)
             {
                 Console.CursorVisible = false;
-                Console.Clear();
                 Console.Title = "FWT-CLI Menu Debug";
                 Console.WriteLine("Raman's Fitness Workout Tracker CLI");
 
@@ -41,6 +41,7 @@ namespace ConsoleApp1
                         return;
 
                     default:
+                        Console.Clear();
                         Console.WriteLine("Invalid input. Please try again.\n");
                         break;
                 }

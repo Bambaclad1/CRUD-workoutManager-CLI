@@ -12,13 +12,14 @@ namespace ConsoleApp1
         {
             ExerciseCreator exerciseCreator = new();
             ExcerciseRepository excerciseRepository = new();
-            Console.Title = "FWT-CLI WorkoutManager";
+            WorkoutRepository workoutRepository = new();
 
-            string[] menu = { "1. Create a excercise", "2. Read a excercise ", "3. Read/add a workout", "4. Edit a exercise", "5. Edit a workout", "0. Exit Application" };
+            string[] menu = { "1. Create a excercise", "2. Read a excercise ", "3. Create/Add a workout", "4. Edit a exercise", "5. Edit a workout", "0. Exit Application" };
 
             Console.Clear();
             while (true)
             {
+                Console.Title = "FWT-CLI WorkoutManager";
                 Console.WriteLine("Welcome to the workout manager");
 
                 foreach (string items in menu)
@@ -43,6 +44,7 @@ namespace ConsoleApp1
                         break;
 
                     case 3:
+                        workoutRepository.Menu();
                         break;
 
                     case 0:

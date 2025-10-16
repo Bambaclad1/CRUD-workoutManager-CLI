@@ -392,10 +392,12 @@ namespace ConsoleApp1
         }
     }
 
-    internal class ExerciseCreator
+    public class ExerciseCreator
     {
         public Excercise Create()
         {
+            Console.Title = "FWT-CLI ExcerciseCreator";
+
             // Implemented Builder Pattern from Refactoring.Guru
 
             var builder = new ExcerciseBuilder();
@@ -443,11 +445,9 @@ namespace ConsoleApp1
                         continue;
                 }
             }
-
-            builder.Reset();
         }
 
-        public void UseReflection(Excercise buildedExcercise)
+        public static void UseReflection(Excercise buildedExcercise)
         {
             PropertyInfo[] properties = typeof(Excercise).GetProperties();
 

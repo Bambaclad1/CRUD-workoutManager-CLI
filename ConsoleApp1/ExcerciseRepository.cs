@@ -8,17 +8,22 @@ namespace ConsoleApp1
         {
             WriteIndented = true,
             AllowTrailingCommas = true,
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
 
-        private static string ReadExcercises()
+        private static void ReadExcercises()
         {
             try
             {
                 string jsonpath = AppDomain.CurrentDomain.BaseDirectory + "\\excerciseFormat.json";
                 string content = File.ReadAllText(jsonpath);
+                List<Excercise> parsedExcercises = JsonSerializer.Deserialize<List<Excercise>>(content);
 
-                return content;
+                foreach (var ex in parsedExcercises)
+                {
+                    ExerciseCreator.UseReflection(ex);
+                }
+
+                return;
             }
             catch (Exception e)
             {
@@ -28,6 +33,7 @@ namespace ConsoleApp1
 
         public static void SaveExcercises(Excercise buildedExcercise)
         {
+
             Console.WriteLine("Saving workout, please wait...");
             try
             {
@@ -62,7 +68,8 @@ namespace ConsoleApp1
 
         public static void Read()
         {
-            Console.WriteLine(ReadExcercises());
+            Console.Title = "FWT-CLI ExcerciseRepository";
+            ReadExcercises();
         }
     }
 }
