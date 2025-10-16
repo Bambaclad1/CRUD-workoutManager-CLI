@@ -12,41 +12,82 @@
     </Design.DataContext>
 
     <Grid RowDefinitions="Auto,*">
-        <TextBlock Grid.Row="0" 
-                  Text="My Exercises" 
-                  FontSize="28" 
-                  FontWeight="Bold"
-                  Margin="0,0,0,20"/>
+        <StackPanel Grid.Row="0" Margin="0,0,0,25">
+            <TextBlock Classes="Title"
+                      Text="My Exercises" 
+                      Margin="0,0,0,5"/>
+            <TextBlock Classes="Subtitle"
+                      Text="Manage and track your workout routines"
+                      FontSize="16"/>
+        </StackPanel>
         
         <ScrollViewer Grid.Row="1">
             <ItemsControl ItemsSource="{Binding Exercises}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border Background="White" 
-                               CornerRadius="8" 
-                               Padding="15" 
-                               Margin="0,0,0,10">
-                            <Grid ColumnDefinitions="*,Auto">
-                                <StackPanel Grid.Column="0" Spacing="8">
+                               CornerRadius="10" 
+                               Padding="20" 
+                               Margin="0,0,0,15"
+                               BoxShadow="0 2 10 0 #15000000">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                                <!-- Icon -->
+                                <Border Grid.Column="0"
+                                       Width="50" 
+                                       Height="50"
+                                       CornerRadius="25"
+                                       Background="#E8F4FD"
+                                       VerticalAlignment="Top">
+                                    <TextBlock Text="💪" 
+                                             FontSize="24" 
+                                             HorizontalAlignment="Center" 
+                                             VerticalAlignment="Center"/>
+                                </Border>
+                                
+                                <!-- Content -->
+                                <StackPanel Grid.Column="1" Spacing="10" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding Name}" 
-                                              FontSize="20" 
-                                              FontWeight="Bold"/>
+                                              FontSize="22" 
+                                              FontWeight="Bold"
+                                              Foreground="#2C3E50"/>
                                     <TextBlock Text="{Binding Description}" 
                                               Foreground="#7F8C8D"
-                                              TextWrapping="Wrap"/>
-                                    <StackPanel Orientation="Horizontal" Spacing="20">
-                                        <TextBlock>
-                                            <Run Text="Difficulty: "/>
-                                            <Run Text="{Binding DifficultyLevel}" FontWeight="Bold"/>
-                                        </TextBlock>
-                                        <TextBlock>
-                                            <Run Text="Sets: "/>
-                                            <Run Text="{Binding Sets}" FontWeight="Bold"/>
-                                        </TextBlock>
-                                        <TextBlock>
-                                            <Run Text="Reps: "/>
-                                            <Run Text="{Binding Reps}" FontWeight="Bold"/>
-                                        </TextBlock>
+                                              TextWrapping="Wrap"
+                                              FontSize="14"/>
+                                    <StackPanel Orientation="Horizontal" Spacing="25">
+                                        <Border Background="#E8F4FD" 
+                                               Padding="8,4" 
+                                               CornerRadius="4">
+                                            <StackPanel Orientation="Horizontal" Spacing="5">
+                                                <TextBlock Text="📊" FontSize="14"/>
+                                                <TextBlock Foreground="#3498DB" FontWeight="SemiBold">
+                                                    <Run Text="Difficulty: "/>
+                                                    <Run Text="{Binding DifficultyLevel}"/>
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Background="#E8F8F5" 
+                                               Padding="8,4" 
+                                               CornerRadius="4">
+                                            <StackPanel Orientation="Horizontal" Spacing="5">
+                                                <TextBlock Text="🔢" FontSize="14"/>
+                                                <TextBlock Foreground="#2ECC71" FontWeight="SemiBold">
+                                                    <Run Text="Sets: "/>
+                                                    <Run Text="{Binding Sets}"/>
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Background="#FEF5E7" 
+                                               Padding="8,4" 
+                                               CornerRadius="4">
+                                            <StackPanel Orientation="Horizontal" Spacing="5">
+                                                <TextBlock Text="🔁" FontSize="14"/>
+                                                <TextBlock Foreground="#F39C12" FontWeight="SemiBold">
+                                                    <Run Text="Reps: "/>
+                                                    <Run Text="{Binding Reps}"/>
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </Border>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>

@@ -9,44 +9,69 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="Workout Manager"
         Width="1000"
-        Height="600">
+        Height="600"
+        MinWidth="800"
+        MinHeight="500">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="200,*">
-        <!-- Sidebar Navigation -->
-        <Border Grid.Column="0" Background="#2C3E50" Padding="10">
-            <StackPanel Spacing="10">
-                <TextBlock Text="Workout Manager" 
-                          FontSize="20" 
-                          FontWeight="Bold" 
-                          Foreground="White" 
-                          Margin="0,0,0,20"/>
+    <Grid ColumnDefinitions="220,*">
+        <!-- Sidebar Navigation with gradient -->
+        <Border Grid.Column="0" Padding="15">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Color="#2C3E50" Offset="0"/>
+                    <GradientStop Color="#34495E" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            
+            <StackPanel Spacing="12">
+                <!-- Logo and Title -->
+                <StackPanel Spacing="10" Margin="0,10,0,30">
+                    <Border Width="64" Height="64" 
+                           CornerRadius="32"
+                           Background="#3498DB"
+                           HorizontalAlignment="Center">
+                        <TextBlock Text="💪" 
+                                 FontSize="36" 
+                                 HorizontalAlignment="Center" 
+                                 VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock Text="Workout Manager" 
+                              FontSize="18" 
+                              FontWeight="Bold" 
+                              Foreground="White" 
+                              HorizontalAlignment="Center"
+                              TextAlignment="Center"/>
+                </StackPanel>
                 
-                <Button Content="🏠 Home" 
+                <Button Classes="NavButton"
+                       Content="🏠  Home" 
                        Command="{Binding ShowHomeCommand}"
                        HorizontalAlignment="Stretch"
-                       HorizontalContentAlignment="Left"
-                       Padding="10"/>
+                       Padding="12"
+                       FontSize="14"/>
                 
-                <Button Content="💪 Exercises" 
+                <Button Classes="NavButton"
+                       Content="💪  Exercises" 
                        Command="{Binding ShowExercisesCommand}"
                        HorizontalAlignment="Stretch"
-                       HorizontalContentAlignment="Left"
-                       Padding="10"/>
+                       Padding="12"
+                       FontSize="14"/>
                 
-                <Button Content="➕ Create Exercise" 
+                <Button Classes="NavButton"
+                       Content="➕  Create Exercise" 
                        Command="{Binding ShowCreateExerciseCommand}"
                        HorizontalAlignment="Stretch"
-                       HorizontalContentAlignment="Left"
-                       Padding="10"/>
+                       Padding="12"
+                       FontSize="14"/>
             </StackPanel>
         </Border>
 
         <!-- Main Content Area -->
-        <Border Grid.Column="1" Background="#ECF0F1" Padding="20">
+        <Border Grid.Column="1" Background="#F5F6FA" Padding="30">
             <ContentControl Content="{Binding CurrentViewModel}"/>
         </Border>
     </Grid>

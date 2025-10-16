@@ -2,8 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="WorkoutManagerUI.App"
              xmlns:local="using:WorkoutManagerUI"
-             RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+             RequestedThemeVariant="Light">
+             <!-- Force Light theme for consistent text colors -->
 
     <Application.DataTemplates>
         <local:ViewLocator/>
@@ -11,5 +11,47 @@
   
     <Application.Styles>
         <FluentTheme />
+        
+        <!-- Custom styles for better readability -->
+        <Style Selector="TextBlock">
+            <Setter Property="Foreground" Value="#2C3E50"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Subtitle">
+            <Setter Property="Foreground" Value="#7F8C8D"/>
+        </Style>
+        
+        <Style Selector="TextBlock.Title">
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+        </Style>
+        
+        <Style Selector="TextBlock.SectionTitle">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+        </Style>
+        
+        <Style Selector="Button">
+            <Setter Property="Background" Value="#3498DB"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        
+        <Style Selector="Button:pointerover">
+            <Setter Property="Background" Value="#2980B9"/>
+        </Style>
+        
+        <Style Selector="Button.NavButton">
+            <Setter Property="Background" Value="#34495E"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
+        
+        <Style Selector="Button.NavButton:pointerover">
+            <Setter Property="Background" Value="#415366"/>
+        </Style>
     </Application.Styles>
 </Application>

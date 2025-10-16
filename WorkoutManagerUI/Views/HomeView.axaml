@@ -11,26 +11,153 @@
         <vm:HomeViewModel/>
     </Design.DataContext>
 
-    <StackPanel Spacing="20">
-        <TextBlock Text="Welcome to Workout Manager" 
-                  FontSize="32" 
-                  FontWeight="Bold"/>
-        <TextBlock Text="Manage your exercises and workouts with ease" 
-                  FontSize="18" 
-                  Foreground="#7F8C8D"/>
-        
-        <Border Background="White" 
-               CornerRadius="8" 
-               Padding="20"
-               Margin="0,20,0,0">
-            <StackPanel Spacing="15">
-                <TextBlock Text="Features:" FontSize="20" FontWeight="Bold"/>
-                <TextBlock Text="✓ Create and manage exercises" FontSize="16"/>
-                <TextBlock Text="✓ View all your exercises" FontSize="16"/>
-                <TextBlock Text="✓ Track sets, reps, and rest times" FontSize="16"/>
-                <TextBlock Text="✓ Add detailed execution steps" FontSize="16"/>
-                <TextBlock Text="✓ Include video URLs for demonstrations" FontSize="16"/>
-            </StackPanel>
-        </Border>
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel Spacing="25" MaxWidth="900">
+            <!-- Hero Section -->
+            <Border Background="#3498DB" 
+                   CornerRadius="12" 
+                   Padding="40,30">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="Welcome to Workout Manager" 
+                              FontSize="36" 
+                              FontWeight="Bold"
+                              Foreground="White"/>
+                    <TextBlock Text="Track your fitness journey with ease and precision" 
+                              FontSize="18" 
+                              Foreground="#ECF0F1"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Features Grid -->
+            <TextBlock Classes="SectionTitle" Text="What You Can Do" Margin="0,10,0,10"/>
+            
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="20" RowSpacing="20">
+                <!-- Feature 1 -->
+                <Border Grid.Row="0" Grid.Column="0"
+                       Background="White" 
+                       CornerRadius="10" 
+                       Padding="20"
+                       BoxShadow="0 2 8 0 #20000000">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="📝" FontSize="32"/>
+                        <TextBlock Text="Create Exercises" 
+                                  FontSize="18" 
+                                  FontWeight="SemiBold"
+                                  Foreground="#2C3E50"/>
+                        <TextBlock Text="Build your custom exercise library with detailed information" 
+                                  TextWrapping="Wrap"
+                                  Foreground="#7F8C8D"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Feature 2 -->
+                <Border Grid.Row="0" Grid.Column="1"
+                       Background="White" 
+                       CornerRadius="10" 
+                       Padding="20"
+                       BoxShadow="0 2 8 0 #20000000">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="📊" FontSize="32"/>
+                        <TextBlock Text="Track Progress" 
+                                  FontSize="18" 
+                                  FontWeight="SemiBold"
+                                  Foreground="#2C3E50"/>
+                        <TextBlock Text="Monitor sets, reps, and rest times for optimal results" 
+                                  TextWrapping="Wrap"
+                                  Foreground="#7F8C8D"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Feature 3 -->
+                <Border Grid.Row="1" Grid.Column="0"
+                       Background="White" 
+                       CornerRadius="10" 
+                       Padding="20"
+                       BoxShadow="0 2 8 0 #20000000">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="🎯" FontSize="32"/>
+                        <TextBlock Text="Target Muscles" 
+                                  FontSize="18" 
+                                  FontWeight="SemiBold"
+                                  Foreground="#2C3E50"/>
+                        <TextBlock Text="Define primary and secondary muscle groups for each exercise" 
+                                  TextWrapping="Wrap"
+                                  Foreground="#7F8C8D"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Feature 4 -->
+                <Border Grid.Row="1" Grid.Column="1"
+                       Background="White" 
+                       CornerRadius="10" 
+                       Padding="20"
+                       BoxShadow="0 2 8 0 #20000000">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="🎥" FontSize="32"/>
+                        <TextBlock Text="Video Guides" 
+                                  FontSize="18" 
+                                  FontWeight="SemiBold"
+                                  Foreground="#2C3E50"/>
+                        <TextBlock Text="Add video URLs to demonstrate proper form and technique" 
+                                  TextWrapping="Wrap"
+                                  Foreground="#7F8C8D"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Feature 5 -->
+                <Border Grid.Row="2" Grid.Column="0"
+                       Background="White" 
+                       CornerRadius="10" 
+                       Padding="20"
+                       BoxShadow="0 2 8 0 #20000000">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="📋" FontSize="32"/>
+                        <TextBlock Text="Step-by-Step" 
+                                  FontSize="18" 
+                                  FontWeight="SemiBold"
+                                  Foreground="#2C3E50"/>
+                        <TextBlock Text="Create detailed execution steps for perfect form" 
+                                  TextWrapping="Wrap"
+                                  Foreground="#7F8C8D"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Feature 6 -->
+                <Border Grid.Row="2" Grid.Column="1"
+                       Background="White" 
+                       CornerRadius="10" 
+                       Padding="20"
+                       BoxShadow="0 2 8 0 #20000000">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="🏋️" FontSize="32"/>
+                        <TextBlock Text="Equipment Tracking" 
+                                  FontSize="18" 
+                                  FontWeight="SemiBold"
+                                  Foreground="#2C3E50"/>
+                        <TextBlock Text="Log required equipment for each exercise" 
+                                  TextWrapping="Wrap"
+                                  Foreground="#7F8C8D"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            
+            <!-- Call to Action -->
+            <Border Background="#2ECC71" 
+                   CornerRadius="10" 
+                   Padding="25"
+                   Margin="0,20,0,0">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Ready to Start?" 
+                              FontSize="24" 
+                              FontWeight="Bold"
+                              Foreground="White"
+                              HorizontalAlignment="Center"/>
+                    <TextBlock Text="Click 'Create Exercise' to add your first workout!" 
+                              FontSize="16" 
+                              Foreground="#E8F8F5"
+                              HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
