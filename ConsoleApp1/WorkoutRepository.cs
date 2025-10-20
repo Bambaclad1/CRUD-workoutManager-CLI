@@ -143,8 +143,27 @@ namespace ConsoleApp1
                 }
             }
         }
+
+        public List<Excercise> ReturnSelectedExcercises(List<Excercise> parsedExcercises, List<int> userSelections)
+        {
+            List<Excercise> selectedExercises = new();
+
+            Console.WriteLine("Current chosen exercises: \n");
+            foreach (int number in userSelections)
+            {
+                int index = number - 1;
+                var ex = parsedExcercises[index];
+                selectedExercises.Add(ex);
+                Console.WriteLine($"{index}. Name: {ex.Name} \nDescription {ex.Description}\n");
+            }
+            return selectedExercises;
+        }
+
         public void WorkoutOnboarding()
         {
+            // get user data
+            List<int> count;
+            List <Excercise> selectedExercises = new();
             while (true)
             {
                 Console.WriteLine("You are now in a menu to create a workout. Please enter the name for your workout: ");
@@ -167,8 +186,9 @@ namespace ConsoleApp1
                     case "y":
                         var excerciseObject = ReadExercises();
                         Console.WriteLine(excerciseObject.excerciseCount);
-                        AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout", excerciseObject.excerciseCount);
-                        return;
+                        count = AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout", excerciseObject.excerciseCount);
+                        selectedExercises = ReturnSelectedExcercises(excerciseObject.parsedExcercises, count);
+                        break;
                     case "n":
                         Console.Clear();
                         Console.WriteLine("Restarting then...");
@@ -178,6 +198,10 @@ namespace ConsoleApp1
                         Console.WriteLine("\n\nNo valid answer was given (y/n). Try again.");
                         continue;
                 }
+
+                // add data to workout class
+
+                Console.WriteLine("Your workout is successfully created.");
 
             }
         }
