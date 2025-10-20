@@ -8,6 +8,7 @@ namespace ConsoleApp1
         {
             WriteIndented = true,
             AllowTrailingCommas = true,
+            PropertyNameCaseInsensitive = true
         };
 
         private static void ReadExcercises()
@@ -22,7 +23,7 @@ namespace ConsoleApp1
                 {
                     ExerciseCreator.UseReflection(ex);
                 }
-
+                Console.WriteLine($"---\n HELLO DEVELOPER \n I AM READING FROM {jsonpath} \n GOODLUCK DEBUGGING :) \n ---");
                 return;
             }
             catch (Exception e)

@@ -2,6 +2,8 @@
 using System.Text.RegularExpressions;
 using System.Reflection;
 using System.Transactions;
+using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace ConsoleApp1
 {
@@ -313,6 +315,7 @@ namespace ConsoleApp1
                     }
                     else
                     {
+                        Console.WriteLine("DEAR DEVELOPER, THIS NEEDS TO BE FIXED!");
                         _excercise.RecommendedRestTime = TimeSpan.FromSeconds(output);
                         return;
                     }
@@ -424,7 +427,7 @@ namespace ConsoleApp1
                 Excercise buildedExcercise = builder.GetProduct();
 
                 // Uses Reflection to print everything out, instead of manually
-                // having to assign a form. Future proof. Maybe. 20% chance. 10%?
+                // having to assign a form. Also uses a enumerable. Future proof. Maybe. 20% chance. 10%?
                 UseReflection(buildedExcercise);
 
                 Console.WriteLine("Is the information correct which you wrote down? (y/n): ");
@@ -450,12 +453,20 @@ namespace ConsoleApp1
         public static void UseReflection(Excercise buildedExcercise)
         {
             PropertyInfo[] properties = typeof(Excercise).GetProperties();
-
+            Console.WriteLine("\n");
             foreach (PropertyInfo property in properties)
             {
                 object value = property.GetValue(buildedExcercise);
                 string name = property.Name;
-                Console.WriteLine($"{name} = {value}");
+
+                if (value is IEnumerable enumerable && value is not string)
+                {
+                    string joined = string.Join(", ", enumerable.Cast<object>());
+                    Console.WriteLine($"{name} = {joined}");
+                }
+                else
+                 Console.WriteLine($"{name} = {value}");
+
             }
         }
     }

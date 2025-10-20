@@ -60,25 +60,27 @@ namespace ConsoleApp1
                 """";
         }
 
-        public void ReadExercises()
+        public (int excerciseCount, List<Excercise> parsedExcercises) ReadExercises()
         {
             try
             {
                 string jsonpath = AppDomain.CurrentDomain.BaseDirectory + "\\excerciseFormat.json";
                 string content = File.ReadAllText(jsonpath);
                 List<Excercise> parsedExcercises = JsonSerializer.Deserialize<List<Excercise>>(content);
-                int count = 1;
+                int count = 0;
                 foreach (var ex in parsedExcercises)
                 {
+                    count++;
                     Console.WriteLine($"""
-                        Saved excercise {count} 
+                        ______________________________
+                        Saved excercise {count}.
                         Name: {ex.Name}
                         Description: {ex.Description}
                         """);
-                    count++;
-                }
 
-                return;
+                }
+                Console.WriteLine("______________________________\n\n");
+                return (count, parsedExcercises);
             }
             catch (Exception e)
             {
@@ -86,6 +88,17 @@ namespace ConsoleApp1
             }
         }
 
+        public List<int> AskUserInput(string printMe)
+        {
+            List<int> userSelections = new();
+            Console.WriteLine(printMe);
+            Console.ReadLine();
+            // select excercise from int receieved logica
+            
+
+
+            return userSelections;
+        }
         public void WorkoutOnboarding()
         {
             while (true)
@@ -108,6 +121,9 @@ namespace ConsoleApp1
                 switch (userinput)
                 {
                     case "y":
+                        var excerciseObject = ReadExercises();
+                        Console.WriteLine(excerciseObject.excerciseCount);
+                        AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout");
                         return;
                     case "n":
                         Console.Clear();
@@ -120,8 +136,6 @@ namespace ConsoleApp1
                 }
 
             }
-            Console.WriteLine("Next part");
-
         }
     }
 }
