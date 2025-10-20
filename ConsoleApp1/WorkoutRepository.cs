@@ -88,16 +88,60 @@ namespace ConsoleApp1
             }
         }
 
-        public List<int> AskUserInput(string printMe)
+        public List<int> AskUserInput(string printMe, int count)
         {
             List<int> userSelections = new();
-            Console.WriteLine(printMe);
-            Console.ReadLine();
-            // select excercise from int receieved logica
-            
+            while (true)
+            {
+                Console.WriteLine(printMe);
+                string input = Console.ReadLine();
+                if (!int.TryParse(input, out int output) || output > count || output <= 0)
+                {
+                    Console.WriteLine("Not a valid answer! Try again please..");
+                    continue;
+                }
+                else
+                {
+                    userSelections.Add(output);
+                    break;
+                }
+            }
+            while (true)
+            {
+                Console.Write("Current excercies chosen: ");
+                foreach (int useritem in userSelections)
+                {
+                    Console.Write(useritem + " ");
+                }
+                Console.WriteLine("\nWould you like to add more excercises in your workout? (y/n)");
+                string answer = Console.ReadLine();
 
+                if (String.IsNullOrEmpty(answer))
+                {
+                    Console.WriteLine("\n\nNo valid answer was given. Try again.");
+                }
 
-            return userSelections;
+                switch (answer)
+                {
+                    case "y":
+                        Console.WriteLine(printMe);
+                        string input = Console.ReadLine();
+                        if (!int.TryParse(input, out int output) || output > count || output <= 0)
+                        {
+                            Console.WriteLine("Not a valid answer! Try again please..");
+                            continue;
+                        }
+                        else
+                        {
+                            userSelections.Add(output);
+                            break;
+                        }
+
+                    case "n":
+                        Console.WriteLine("Finished.");
+                        return userSelections;
+                }
+            }
         }
         public void WorkoutOnboarding()
         {
@@ -123,7 +167,7 @@ namespace ConsoleApp1
                     case "y":
                         var excerciseObject = ReadExercises();
                         Console.WriteLine(excerciseObject.excerciseCount);
-                        AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout");
+                        AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout", excerciseObject.excerciseCount);
                         return;
                     case "n":
                         Console.Clear();
