@@ -67,7 +67,7 @@ Do people these days actually share their entire stack developing programs? I th
 nvm this shit is terrible, never ever let ai make a banner bro 💀
 <img width="855" height="543" alt="image" src="https://github.com/user-attachments/assets/baa28a92-8246-4e2f-a014-04ae378fb05d" />
 
-wait actually, who tf let cgpt5 cook!? ts is majestic af <img width="64" height="64" alt="your wifi sucks" src="https://github.com/user-attachments/assets/e942f8ae-b5a1-40fb-9d8a-b15af8c0260c" />
+wait actually, who tf let cgpt5 cook!? ts is majestic af <img width="32" height="32" alt="your wifi sucks" src="https://github.com/user-attachments/assets/e942f8ae-b5a1-40fb-9d8a-b15af8c0260c" />
 
 
-<img width="1006" height="1058" alt="yeah skill issue if you see this tuff" src="https://github.com/user-attachments/assets/afe68fc1-51a8-4174-b1fc-09ab49f34e79" />
+<img width="700" height="1058" alt="yeah skill issue if you see this tuff" src="https://github.com/user-attachments/assets/afe68fc1-51a8-4174-b1fc-09ab49f34e79" />
