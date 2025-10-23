@@ -14,7 +14,7 @@ namespace ConsoleApp1
             ExcerciseRepository excerciseRepository = new();
             WorkoutRepository workoutRepository = new();
 
-            string[] menu = { "1. Create a excercise", "2. Read a excercise ", "3. Create/Add a workout", "4. Edit a exercise", "5. Edit a workout", "0. Exit Application" };
+            string[] menu = { "1. Create a excercise", "2. Read a excercise ", "3. Create a workout", "4. Read a workout", "5. Edit a exercise", "6. Edit a workout", "0. Exit Application" };
 
             Console.Clear();
             while (true)
@@ -44,9 +44,12 @@ namespace ConsoleApp1
                         break;
 
                     case 3:
-                        workoutRepository.Menu();
+                        WorkoutRepository.SaveExcercises(workoutRepository.WorkoutOnboarding());
                         break;
 
+                    case 4:
+                        WorkoutRepository.Read();
+                        break;
                     case 0:
                         return;
 
