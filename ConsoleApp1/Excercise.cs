@@ -26,5 +26,10 @@ namespace ConsoleApp1
         public TimeSpan RecommendedRestTime = TimeSpan.FromSeconds(60);
 
         public List<string> EquipmentNeeded { get; set; } = [];
+
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
     }
 }

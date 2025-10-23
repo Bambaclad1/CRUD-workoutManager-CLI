@@ -23,7 +23,6 @@ namespace ConsoleApp1
                 {
                     ExerciseCreator.UseReflection(ex);
                 }
-                Console.WriteLine($"---\n HELLO DEVELOPER \n I AM READING FROM {jsonpath} \n GOODLUCK DEBUGGING :) \n ---");
                 return;
             }
             catch (Exception e)

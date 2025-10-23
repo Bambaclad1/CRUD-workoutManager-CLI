@@ -1,69 +1,78 @@
 ﻿using System.Reflection;
 using System.Text.Json;
+using System.Collections;
 
 namespace ConsoleApp1
 {
-    public class WorkoutRepository 
+    public class WorkoutRepository
     {
-        public void Menu()
+        private static readonly JsonSerializerOptions _options = new()
         {
-            ExcerciseRepository excerciseRepository = new ExcerciseRepository();
-            Console.Clear();
-            Console.WriteLine("Welcome to the Workout Repository Menu. Would you like to create a new Workout or add a Existing Workout (template?) For information about this works, please refer to the documentation, or press entry '3'");
-            string[] menu = { "1. Create a new workout", "2. Add a existing workout (template) ", "3. Information about workouts", "0. Exit Menu" };
+            WriteIndented = true,
+            AllowTrailingCommas = true,
+            PropertyNameCaseInsensitive = true
+        };
 
-            while (true)
+        public static void Read()
+        {
+            try
             {
-                Console.WriteLine("Welcome to the workout manager");
+                string jsonpath = AppDomain.CurrentDomain.BaseDirectory + "\\workoutFormat.json";
+                string content = File.ReadAllText(jsonpath);
+                List<Workout> parsedWorkouts = JsonSerializer.Deserialize<List<Workout>>(content);
 
-                foreach (string items in menu)
-                    Console.WriteLine(items);
-
-                Console.WriteLine("\n");
-                string feedback = Console.ReadLine();
-
-                if (!int.TryParse(feedback, out int answer))
+                foreach (var ex in parsedWorkouts)
                 {
-                    Console.Clear();
+                    UseReflection(ex);
                 }
-
-                switch (answer)
-                {
-                    case 1:
-                        WorkoutOnboarding();
-                        break;
-
-                    case 2:
-                        break;
-
-                    case 3:
-                        Console.WriteLine(Information());
-                        break;
-
-                    case 0:
-                        return;
-
-                    default:
-                        Console.WriteLine("Invalid input. Please try again.\n");
-                        break;
-                }
+                return;
+            }
+            catch (Exception e)
+            {
+                throw new FileNotFoundException("Error 404, while trying to access excerciseFormat, it was not found.", e);
             }
         }
 
-        public string Information()
+        public static void SaveExcercises(Workout buildedWorkout)
         {
-            return """"
-                One workout can have multiple exercises. If you don't see the excercise you like to add in your workout, you should add a excercise in the former menu.
-                By creating a workout you can create a series of exercises, which is usually performed in a combination of one and another.
-                The first step recommended is to create a series of exercises to be created in your workout. Then you can make a workout of it.
+            Console.WriteLine("Saving workout, please wait...");
+            try
+            {
+                string jsonPath = AppDomain.CurrentDomain.BaseDirectory + "\\workoutFormat.json";
 
-                """";
+                List<Workout> workouts = new();
+
+                if (File.Exists(jsonPath))
+                {
+                    string existingContent = File.ReadAllText(jsonPath);
+
+                    if (!string.IsNullOrWhiteSpace(existingContent))
+                    {
+                        workouts = JsonSerializer.Deserialize<List<Workout>>(existingContent, _options)
+                                    ?? new List<Workout>();
+                    }
+                }
+
+                workouts.Add(buildedWorkout);
+
+                string jsonReady = JsonSerializer.Serialize(workouts, _options);
+
+                File.WriteAllText(jsonPath, jsonReady);
+
+                Console.WriteLine("Saved workout successfully!");
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Unknown exception, failed to save workout.  ", e);
+            }
         }
 
         public (int excerciseCount, List<Excercise> parsedExcercises) ReadExercises()
         {
             try
             {
+                Console.WriteLine("Press any key to display all saved exercises...");
+                Console.ReadKey();
                 string jsonpath = AppDomain.CurrentDomain.BaseDirectory + "\\excerciseFormat.json";
                 string content = File.ReadAllText(jsonpath);
                 List<Excercise> parsedExcercises = JsonSerializer.Deserialize<List<Excercise>>(content);
@@ -77,7 +86,6 @@ namespace ConsoleApp1
                         Name: {ex.Name}
                         Description: {ex.Description}
                         """);
-
                 }
                 Console.WriteLine("______________________________\n\n");
                 return (count, parsedExcercises);
@@ -88,19 +96,75 @@ namespace ConsoleApp1
             }
         }
 
-        public List<int> AskUserInput(string printMe)
+        public List<int> AskUserInput(string printMe, int count)
         {
+
             List<int> userSelections = new();
-            Console.WriteLine(printMe);
-            Console.ReadLine();
-            // select excercise from int receieved logica
-            
 
+            while (true)
+            {
+                Console.WriteLine(printMe);
+                string input = Console.ReadLine();
 
-            return userSelections;
+                if (!int.TryParse(input, out int output) || output > count || output <= 0)
+                {
+                    Console.WriteLine("Not a valid answer! Try again please..");
+                    continue;
+                }
+
+                userSelections.Add(output);
+
+                // --- Ask if the user wants to continue ---
+                while (true)
+                {
+                    Console.WriteLine("\nWould you like to add more exercises to your workout? (y/n)");
+                    string answer = Console.ReadLine()?.Trim().ToLower();
+
+                    if (string.IsNullOrEmpty(answer))
+                    {
+                        Console.WriteLine("No valid answer was given. Try again.");
+                        continue;
+                    }
+
+                    if (answer == "y")
+                    {
+                        break;
+                    }
+                    else if (answer == "n")
+                    {
+                        Console.WriteLine("Finished.\n");
+                        return userSelections;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please type 'y' or 'n'.");
+                    }
+                }
+            }
         }
-        public void WorkoutOnboarding()
+
+        public List<Excercise> ReturnSelectedExcercises(List<Excercise> parsedExcercises, List<int> userSelections)
         {
+            List<Excercise> selectedExercises = new();
+            Console.WriteLine("\n\n\nCurrent chosen exercises: ");
+            foreach (int number in userSelections)
+            {
+                int index = number - 1;
+                var ex = parsedExcercises[index];
+                selectedExercises.Add(ex);
+                Console.WriteLine($"\n{number}. Name: {ex.Name} \nDescription: {ex.Description}\n");
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            return selectedExercises;
+        }
+
+        public Workout WorkoutOnboarding()
+        {
+            // get user data
+            List<int> count;
+            List<Excercise> selectedExercises = new();
+            Workout workout = new();
             while (true)
             {
                 Console.WriteLine("You are now in a menu to create a workout. Please enter the name for your workout: ");
@@ -122,9 +186,10 @@ namespace ConsoleApp1
                 {
                     case "y":
                         var excerciseObject = ReadExercises();
-                        Console.WriteLine(excerciseObject.excerciseCount);
-                        AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout");
-                        return;
+                        count = AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout", excerciseObject.excerciseCount);
+                        selectedExercises = ReturnSelectedExcercises(excerciseObject.parsedExcercises, count);
+                        break;
+
                     case "n":
                         Console.Clear();
                         Console.WriteLine("Restarting then...");
@@ -134,8 +199,36 @@ namespace ConsoleApp1
                         Console.WriteLine("\n\nNo valid answer was given (y/n). Try again.");
                         continue;
                 }
+                workout.Name = a;
+                workout.Description = b;
+                foreach (Excercise ex in selectedExercises)
+                {
+                    workout.AddExcercise(ex);
+                }
+                Console.WriteLine("\nYour workout is successfully created.\n");
 
+                return workout;
             }
+        }
+
+        public static void UseReflection(Workout buildedWorkout)
+        {
+            PropertyInfo[] properties = typeof(Workout).GetProperties();
+            Console.WriteLine("\n");
+            foreach (PropertyInfo property in properties)
+            {
+                object value = property.GetValue(buildedWorkout);
+                string name = property.Name;
+
+                if (value is IEnumerable enumerable && value is not string)
+                {
+                    string joined = string.Join(", ", enumerable.Cast<object>());
+                    Console.WriteLine($"{name} = {joined}");
+                }
+                else
+                    Console.WriteLine($"{name} = {value}");
+            }
+            Console.WriteLine("\n");
         }
     }
 }

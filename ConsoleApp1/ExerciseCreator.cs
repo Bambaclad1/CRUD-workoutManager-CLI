@@ -453,7 +453,7 @@ namespace ConsoleApp1
         public static void UseReflection(Excercise buildedExcercise)
         {
             PropertyInfo[] properties = typeof(Excercise).GetProperties();
-            Console.WriteLine("\n");
+            Console.WriteLine("\n__________");
             foreach (PropertyInfo property in properties)
             {
                 object value = property.GetValue(buildedExcercise);
@@ -465,8 +465,7 @@ namespace ConsoleApp1
                     Console.WriteLine($"{name} = {joined}");
                 }
                 else
-                 Console.WriteLine($"{name} = {value}");
-
+                    Console.WriteLine($"{name} = {value}");
             }
         }
     }
