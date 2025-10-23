@@ -1,4 +1,7 @@
+<img width="765" height="209" alt="c5a082cf-9e92-4ced-8eb1-467d3fb7e8b0" src="https://github.com/user-attachments/assets/9bdbf9e7-5b65-4bb6-9100-0297b4edc44a" />
+
 # Just a CRUD Workout Manager
+
 CRUD DotNet application allowing the user to perform CRUD operations with a application. This project is split in two phases:
 
 - [ ] Phase 1: Create a CRUD application as a console application in C#
@@ -63,3 +66,8 @@ Do people these days actually share their entire stack developing programs? I th
 
 nvm this shit is terrible, never ever let ai make a banner bro 💀
 <img width="855" height="543" alt="image" src="https://github.com/user-attachments/assets/baa28a92-8246-4e2f-a014-04ae378fb05d" />
+
+wait actually, who tf let cgpt5 cook!? ts is majestic af <img width="64" height="64" alt="your wifi sucks" src="https://github.com/user-attachments/assets/e942f8ae-b5a1-40fb-9d8a-b15af8c0260c" />
+
+
+<img width="1006" height="1058" alt="yeah skill issue if you see this tuff" src="https://github.com/user-attachments/assets/afe68fc1-51a8-4174-b1fc-09ab49f34e79" />
