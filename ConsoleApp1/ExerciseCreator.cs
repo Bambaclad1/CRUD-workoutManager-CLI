@@ -38,7 +38,7 @@ namespace ConsoleApp1
 
     public class ExcerciseBuilder : IBuilder
     {
-        private Excercise _excercise = new Excercise();
+        public Excercise _excercise = new Excercise(); //public for reusability to use in other pieces of code.
 
         public ExcerciseBuilder()
         {

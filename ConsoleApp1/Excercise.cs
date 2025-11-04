@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp1
 {
     // Class for defining a seperate workout (e.g. Bench Press)
-    public class Excercise
+    public class Excercise: ICloneable
     {
         public string Name { get; set; } = "DUMMY NAME";
         public string Description { get; set; } = "IF YOU READ THIS, SOMETHING WENT WROONG";
@@ -27,6 +27,10 @@ namespace ConsoleApp1
 
         public List<string> EquipmentNeeded { get; set; } = [];
 
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
         public override string ToString()
         {
             return $"{Name}";

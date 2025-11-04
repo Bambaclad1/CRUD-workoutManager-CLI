@@ -20,7 +20,7 @@ namespace ConsoleApp1
             while (true)
             {
                 Console.Title = "FWT-CLI WorkoutManager";
-                Console.WriteLine("Welcome to the workout manager");
+                Console.WriteLine("\nWelcome to the workout manager");
 
                 foreach (string items in menu)
                     Console.WriteLine(items);
@@ -49,6 +49,9 @@ namespace ConsoleApp1
 
                     case 4:
                         WorkoutRepository.Read();
+                        break;
+                    case 5:
+                       excerciseRepository.Edit();
                         break;
                     case 0:
                         return;

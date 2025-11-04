@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using System.Text.Json;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace ConsoleApp1
 {
@@ -67,12 +68,11 @@ namespace ConsoleApp1
             }
         }
 
+
         public (int excerciseCount, List<Excercise> parsedExcercises) ReadExercises()
         {
             try
             {
-                Console.WriteLine("Press any key to display all saved exercises...");
-                Console.ReadKey();
                 string jsonpath = AppDomain.CurrentDomain.BaseDirectory + "\\excerciseFormat.json";
                 string content = File.ReadAllText(jsonpath);
                 List<Excercise> parsedExcercises = JsonSerializer.Deserialize<List<Excercise>>(content);
@@ -82,8 +82,7 @@ namespace ConsoleApp1
                     count++;
                     Console.WriteLine($"""
                         ______________________________
-                        Saved excercise {count}.
-                        Name: {ex.Name}
+                        Exercise {count}. {ex.Name}
                         Description: {ex.Description}
                         """);
                 }
@@ -92,11 +91,13 @@ namespace ConsoleApp1
             }
             catch (Exception e)
             {
+                Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
+                Console.WriteLine("Warning: No excerciseFormat.json file found. Have you tried creating a exercise first? (BE WARY OF TYPO!)");
                 throw new FileNotFoundException("Error 404, while trying to access excerciseFormat, it was not found.", e);
             }
         }
 
-        public List<int> AskUserInput(string printMe, int count)
+        public List<int> AskUserInput(string printMe, int count, bool AskOnce)
         {
 
             List<int> userSelections = new();
@@ -114,6 +115,8 @@ namespace ConsoleApp1
 
                 userSelections.Add(output);
 
+                if (AskOnce)
+                    return userSelections;
                 // --- Ask if the user wants to continue ---
                 while (true)
                 {
@@ -154,8 +157,6 @@ namespace ConsoleApp1
                 selectedExercises.Add(ex);
                 Console.WriteLine($"\n{number}. Name: {ex.Name} \nDescription: {ex.Description}\n");
             }
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
             return selectedExercises;
         }
 
@@ -186,7 +187,7 @@ namespace ConsoleApp1
                 {
                     case "y":
                         var excerciseObject = ReadExercises();
-                        count = AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout", excerciseObject.excerciseCount);
+                        count = AskUserInput("Current saved excercises have been displayed with a number. Please select a excercise to add in your Workout", excerciseObject.excerciseCount, false);
                         selectedExercises = ReturnSelectedExcercises(excerciseObject.parsedExcercises, count);
                         break;
 
