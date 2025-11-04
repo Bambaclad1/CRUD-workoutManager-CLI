@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
     internal class WorkoutManager
     {
@@ -50,11 +44,14 @@ namespace ConsoleApp1
                     case 4:
                         WorkoutRepository.Read();
                         break;
+
                     case 5:
-                       excerciseRepository.Edit();
+                        excerciseRepository.Edit();
                         break;
+
                     case 6:
                         return;
+
                     case 0:
                         return;
 

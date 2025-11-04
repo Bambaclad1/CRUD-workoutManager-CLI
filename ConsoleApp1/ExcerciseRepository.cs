@@ -1,11 +1,6 @@
 ﻿using ConsoleApp1.util;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace ConsoleApp1
 {

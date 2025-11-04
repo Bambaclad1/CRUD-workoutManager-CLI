@@ -1,7 +1,6 @@
-﻿using System.Reflection;
+﻿using System.Collections;
+using System.Reflection;
 using System.Text.Json;
-using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace ConsoleApp1
 {
@@ -68,7 +67,6 @@ namespace ConsoleApp1
             }
         }
 
-
         public (int excerciseCount, List<Excercise> parsedExcercises) ReadExercises()
         {
             try
@@ -99,7 +97,6 @@ namespace ConsoleApp1
 
         public List<int> AskUserInput(string printMe, int count, bool AskOnce)
         {
-
             List<int> userSelections = new();
 
             while (true)
