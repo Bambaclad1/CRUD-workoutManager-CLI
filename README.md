@@ -44,8 +44,8 @@ As a user, you can perform the following actions:
 - [x] Get Writing/Reading .json files working
 - [x] Create Workout. One workout = multiple excercises
 - [x] Read Workout. Same .json method
-- [ ] Edit existing excercies (use the same builder pattern?)
-- [ ] Edit existing workouts
+- [x] Edit existing excercies (use the same builder pattern?)
+- [x] Edit existing workouts
 - [ ] Remove Excercises/Workouts
 - [ ] Create a Calendar (Use a package..?) and add the possibility to add workouts to it
 - [ ] ICal Intregration
