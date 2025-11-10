@@ -1,9 +1,5 @@
-﻿using System.Net.NetworkInformation;
-using System.Text.RegularExpressions;
+﻿using System.Collections;
 using System.Reflection;
-using System.Transactions;
-using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace ConsoleApp1
 {

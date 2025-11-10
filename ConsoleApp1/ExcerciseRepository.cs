@@ -1,11 +1,6 @@
 ﻿using ConsoleApp1.util;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
@@ -37,6 +32,66 @@ namespace ConsoleApp1
                 throw new FileNotFoundException("Error 404, while trying to access excerciseFormat, it was not found.", e);
             }
         }
+
+        public void RemoveExercise()
+        {
+            while (true)
+            {
+                Console.WriteLine("Would you like to remove a exercise or all exercises?");
+                Console.Write("(One/All): ");
+                string answer = Console.ReadLine();
+
+                if (answer.Equals("One", StringComparison.OrdinalIgnoreCase))
+                {
+                    bool success = RemoveOneExercise();
+                    if (!success)
+                        throw new Exception("Unable to wipe ExerciseRepository?! Does it exist??");
+                    Console.WriteLine("\nSuccess!");
+                    return;
+                }
+                else if (answer.Equals("All", StringComparison.OrdinalIgnoreCase))
+                {
+                    bool success = WipeExerciseRepository();
+                    if (!success)
+                        throw new Exception("Unable to wipe ExerciseRepository?! Does it exist??");
+                    Console.WriteLine("\nSuccess!");
+                    return;
+                }
+                else continue;
+            }
+        }
+
+        public bool RemoveOneExercise()
+        {
+            try
+            {
+                List<int> count;
+                WorkoutRepository workoutRepository = new();
+
+                var exerciseObject = workoutRepository.ReadExercises();
+
+                count = workoutRepository.AskUserInput("Exercices and numbers have been printen down. Please select a exercise to modify.", exerciseObject.excerciseCount, true);
+                int index = count[0] - 1;
+
+                JsonNode jsonnode = JsonNode.Parse(ReturnJsonRepository());
+                jsonnode.AsArray().RemoveAt(index);
+
+                List<Excercise>? exercises = jsonnode.Deserialize<List<Excercise>>(_options);
+
+                bool isWiped = WipeExerciseRepository();
+                if (!isWiped)
+                    throw new FileNotFoundException("Something went wrong, Exerciseformat was not wiped because this was not found!");
+
+                SaveExercicesList(exercises);
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error in TryCatch Block! Error: ", e);
+            }
+        }
+
+
 
         public void Edit()
         {
@@ -152,7 +207,7 @@ namespace ConsoleApp1
 
                 14. See differences between original and modified exercise
                 15. Revert changes to original exercise
-                0. End editing
+                0. End editing (Save)
 
                 """);
                 string input = Console.ReadLine();

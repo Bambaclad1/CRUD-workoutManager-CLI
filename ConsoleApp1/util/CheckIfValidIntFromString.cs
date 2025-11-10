@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApp1.util
+﻿namespace ConsoleApp1.util
 {
     internal class CheckIfValidIntFromString
     {
-        public static int Check (string input, int Min, int Max)
+        public static int Check(string input, int Min, int Max)
         {
             if (!int.TryParse(input, out int result))
             {
@@ -19,7 +13,8 @@ namespace ConsoleApp1.util
             if (result >= Min && result <= Max)
             {
                 return result;
-            } else
+            }
+            else
             {
                 Console.Write($"\nAnswer must be between values {Min} and {Max}, " + result + " is invalid.");
                 return 409;

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
     internal class WorkoutManager
     {
@@ -14,7 +8,7 @@ namespace ConsoleApp1
             ExcerciseRepository excerciseRepository = new();
             WorkoutRepository workoutRepository = new();
 
-            string[] menu = { "1. Create a excercise", "2. Read a excercise ", "3. Create a workout", "4. Read a workout", "5. Edit a exercise", "6. Edit a workout", "0. Exit Application" };
+            string[] menu = { "1. Create a excercise", "2. Read a excercise ", "3. Create a workout", "4. Read a workout", "5. Edit a exercise", "6. Edit a workout", "7. Remove a exercise", "8. Remove a workout", "0. Exit Application" };
 
             Console.Clear();
             while (true)
@@ -50,9 +44,20 @@ namespace ConsoleApp1
                     case 4:
                         WorkoutRepository.Read();
                         break;
+
                     case 5:
-                       excerciseRepository.Edit();
+                        excerciseRepository.Edit();
                         break;
+
+                    case 6:
+                        workoutRepository.Edit();
+                        return;
+                    case 7:
+                        excerciseRepository.RemoveExercise();
+                        return;
+                    case 8:
+                        workoutRepository.RemoveWorkout();
+                        return;
                     case 0:
                         return;
 
