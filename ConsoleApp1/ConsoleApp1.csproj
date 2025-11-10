@@ -13,4 +13,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Ical.Net" Version="5.1.1" />
+  </ItemGroup>
+
 </Project>

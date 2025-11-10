@@ -1,10 +1,15 @@
-﻿namespace ConsoleApp1
+﻿using Ical.Net.CalendarComponents;
+using Ical.Net.DataTypes;
+using Ical.Net.Serialization;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            string[] menu = { "1. Open Workout Manager", "2. Check workout logbook", "0. Exit Application" };
+            CalendarRepository calendarRepository = new();
+            string[] menu = { "1. Open Workout Manager", "2. Create Workout Calendar Event", "0. Exit Application" };
             Console.Clear();
             while (true)
             {
@@ -30,6 +35,7 @@
                         break;
 
                     case 2:
+                        calendarRepository.Create();
                         break;
 
                     case 0:
