@@ -50,8 +50,14 @@
                         break;
 
                     case 6:
+                        workoutRepository.Edit();
                         return;
-
+                    case 7:
+                        excerciseRepository.RemoveExercise();
+                        return;
+                    case 8:
+                        workoutRepository.RemoveWorkout();
+                        return;
                     case 0:
                         return;
 
