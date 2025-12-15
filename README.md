@@ -4,7 +4,7 @@
 
 CRUD DotNet application allowing the user to perform CRUD operations with a application. This project is split in two phases:
 
-- [ ] Phase 1: Create a CRUD application as a console application in C#
+- [x] Phase 1: Create a CRUD application as a console application in C#
 - [ ] Phase 2: Intregrate Avalonia UI Framework for a graphical application
 
 So what does it do?
@@ -47,8 +47,8 @@ As a user, you can perform the following actions:
 - [x] Edit existing excercies (use the same builder pattern?)
 - [x] Edit existing workouts
 - [x] Remove Excercises/Workouts
-- [ ] Create a Calendar (Use a package..?) and add the possibility to add workouts to it
-- [ ] ICal Intregration
+- [x] ~~Create a Calendar (Use a package..?) and add the possibility to add workouts to it~~
+- [x] ICal Intregration (.ics file)
 
 ### Phase Two
 **'Frontend' inplementation**
