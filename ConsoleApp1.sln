@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11304.174 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{F714E980-7D85-48F3-848E-3501EDDB9EF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD_Workout_Manager_GUI_Intregration", "CRUD_Workout_Manager_GUI_Intregration\CRUD_Workout_Manager_GUI_Intregration.csproj", "{D2520251-39FF-4107-88E0-96D284BF47AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F714E980-7D85-48F3-848E-3501EDDB9EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F714E980-7D85-48F3-848E-3501EDDB9EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F714E980-7D85-48F3-848E-3501EDDB9EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2520251-39FF-4107-88E0-96D284BF47AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2520251-39FF-4107-88E0-96D284BF47AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2520251-39FF-4107-88E0-96D284BF47AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2520251-39FF-4107-88E0-96D284BF47AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
